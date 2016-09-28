@@ -14,7 +14,7 @@ repositories {
     maven { url "https://jitpack.io" }
 }
 dependencies {
-    compile 'io.freefair:slf4j-android:1.7.13'
+    compile 'io.freefair:slf4j-android:<version>'
 }
 ```
 
