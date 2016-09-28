@@ -1,8 +1,7 @@
 package org.slf4j.impl;
 
+import android.support.annotation.NonNull;
 import android.util.Log;
-
-import org.jetbrains.annotations.NotNull;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -39,8 +38,8 @@ public class HandroidLoggerAdapter extends AndroidLoggerAdapter {
      * Handy function to get a loggable stack trace from a Throwable. As opposed to Android logging mechanism, it logs even UnknownHostExceptions.
      * @param tr An exception to log
      */
-    @NotNull
-    public static String getStackTraceString(@NotNull Throwable tr) {
+    @NonNull
+    public static String getStackTraceString(@NonNull Throwable tr) {
         final StringWriter sw = new StringWriter();
         final PrintWriter pw = new PrintWriter(sw);
         tr.printStackTrace(pw);
@@ -62,8 +61,8 @@ public class HandroidLoggerAdapter extends AndroidLoggerAdapter {
         Log.println(priority, name, message);
     }
 
-    @NotNull
-    private static String postprocessMessage(@NotNull String message) {
+    @NonNull
+    private static String postprocessMessage(@NonNull String message) {
         // we need to do the following, to work around Android Studio 1.5 bugs:
         // 1. remove all characters with code point 0..31 (for example \r) - if those characters are present in the message, the message is not simply logged at all by Android (!!!)
         // see https://code.google.com/p/android/issues/detail?id=194446
