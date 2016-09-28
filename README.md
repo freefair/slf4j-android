@@ -4,21 +4,17 @@ Tired of slf4j-android not logging your debug messages? Tired of android logger 
 
 ## Using with your project
 
-You do not need to install anything, just check out the sources and run
-```sh
-$ ./gradlew
-```
+[![](https://jitpack.io/v/io.freefair/slf4j-android.svg)](https://jitpack.io/#io.freefair/slf4j-android)
 
-This will install the `slf4j-handroid` library into your local m2 repository. Then,
-just add the following gradle dependency to your Android project:
+You do not need to install anything, just add the following gradle dependency to your Android project:
 
 ```
 repositories {
-  ...
-  mavenLocal()
+    ...
+    maven { url "https://jitpack.io" }
 }
 dependencies {
-  compile 'org.slf4j:slf4j-handroid:1.7.13'
+    compile 'io.freefair:slf4j-android:1.7.13'
 }
 ```
 
